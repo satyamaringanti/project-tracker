@@ -1,0 +1,55 @@
+<div class="form-style-5">
+    <form [formGroup]="profileForm">
+        <label>
+            First Name:
+            <input type="text" formControlName="firstName">
+        </label>
+        
+        <label>
+            Last Name:
+            <input type="text" formControlName="lastName">
+        </label>
+        <div formGroupName="address">
+            <h4>Address</h4>
+            
+            <label>
+                Street:
+                <input type="text" formControlName="street">
+            </label>
+            
+            <label>
+                City:
+                <input type="text" formControlName="city">
+            </label>
+            
+            <label>
+                State:
+                <input type="text" formControlName="state">
+            </label>
+            
+            <label>
+                Zip Code:
+                <input type="text" formControlName="zip">
+            </label>
+        </div>
+        <div formGroupName="personalData" novalidate>
+
+            <label>Email:
+                <input type ="text" formControlName="email"/>
+            </label>
+
+            <label>Mobile number:
+                <input type ="text" formControlName="mobile" />
+            </label>
+
+            <label>Country:
+                <select formControlName="country">
+                    <option *ngFor="let country of countries" [value]="country"
+                    >{{country}}</option>
+                </select>
+            </label>
+            
+        </div>
+        <div><button class="btn btn-primary">Submit</button></div>
+    </form>
+</div>
