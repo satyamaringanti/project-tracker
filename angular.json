@@ -85,12 +85,19 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "../node_modules/font-awesome/fonts"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.css",
+              "../node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.js",
+              "../node_modules/tether/dist/js/tether.js",
+              "../node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         },
         "lint": {
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "problem-tracker"
+    }
+  },
+  "defaultProject": "problem-tracker",
+  "cli": {
+    "analytics": "e075b351-7c6d-4abb-9fe3-a934ab72042d"
+  }
 }

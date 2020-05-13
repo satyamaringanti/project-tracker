@@ -1,6 +1,54 @@
-<div class=" card-container">
-    <a class="card" routerLink="/add-issues-component" routerLinkActive="active">Add Issues</a>
-    <a class="card" routerLink="/my-issues-component" routerLinkActive="active">My Issues</a>
-    <a class="card" routerLink="/notifications-component" routerLinkActive="active">Notifications</a>
-    <a class="card" routerLink="/settings-component" routerLinkActive="active">Settings</a>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<div class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="navbar-header">
+                  <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                  <a href="#" class="navbar-brand">Raise Your Voice</a>
+              </div>
+              <div class="navbar-collapse collapse" id="mobile_menu">
+                  <ul class="nav navbar-nav">
+                      <li><a routerLink="/add-issues-component" routerLinkActive="active">Add Issues</a></li>
+                      <li><a routerLink="/my-issues-component" routerLinkActive="active">My Issues</a></li>
+                      <li><a routerLink="/notifications-component" routerLinkActive="active">Notifications</a></li>
+                      <li><a routerLink="/settings-component" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                      <li><a routerLink="/news-feed.component" routerLinkActive="active"><span class="glyphicon glyphicon-th-list"></span>News Feed</a></li>
+                      <li><a class="nav dropdown-toggle" data-toggle="dropdown" routerLink="/">About Us <span class="caret"></span></a>
+                        
+                        <ul class="nav dropdown-menu">
+                            <li><a routerLink="/">About Three</a></li>
+                            <li><a routerLink="/">About Four</a></li>
+                            <li><a routerLink="/">About Five</a></li>
+                            <li><a routerLink="/">About Six</a></li>
+                        </ul>
+                      </li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right"> 
+                      <li><a *ngIf="!appUser" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                      <li><a *ngIf="appUser" (click)="logout()"routerLinkActive="active">Log Out</a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                  </ul>
+                  <ul class="nav navbar-nav">
+                      <li>
+                          <form action="" class="navbar-form">
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                  </div>
+                              </div>
+                          </form>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>

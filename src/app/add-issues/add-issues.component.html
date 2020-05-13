@@ -1,20 +1,30 @@
-<h3>Log Issues Here</h3>
-<div class="form-style-5">
-    <label>Issue:
-            <select formControlName="issue">
-            <option *ngFor="let issue of issues" [value]="issue">
-                {{issue | titlecase}}
-            </option>
+
+<div class="container">
+    <h3>Log Issues Here</h3>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label>Issue:</label>
+            <select class="bootstrap-select" formControlName="issue">
+                <option>Select one of these issue</option>
+                <option *ngFor="let issue of issues" [value]="issue">
+                    {{issue}}
+                </option>
             </select>
-        </label>
-    <textarea type="text" [formControl]="suggestion"></textarea>
-    <form [formGroup]="userForm">
-        <p>
-            <input type="radio" value="public" formControlName="preference"> Public
-            <input type="radio" value="private" formControlName="preference"> Private
-        </p>
-       <div><input type="file" formControlName="image" (onchange)="onFileChange($event, 'image')"/></div> 
+            <!-- <button *ngFor="let issue of issues"
+                (click)="save()">
+                {{issue | titlecase}}
+            </button> -->
+        </div>
+        <div class="form-group">
+            <input type="checkbox" value="public" formControlName="preference"> Public
+            <input type="checkbox" value="private" formControlName="preference"> Private
+        </div>
+        <div class="form-group">
+            <textarea type="text" formControlName="suggestion"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="file" formControlName="image" (onchange)="onFileChange($event, 'image')"/>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>
-    <br>
-    <button class="btn btn-primary">submit</button>
 </div>
